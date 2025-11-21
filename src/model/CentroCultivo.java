@@ -5,8 +5,18 @@ public class CentroCultivo {
     private String comuna;
     private int toneladas;
 
-    //Constructor
+    //Constructor con validacion
     public CentroCultivo(String nombre, String comuna, int toneladas) {
+        if(nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacio");
+        }
+        if(comuna == null || comuna.isEmpty()) {
+            throw new IllegalArgumentException("La comuna no puede estar vacia");
+        }
+        if(toneladas < 0) {
+            throw new IllegalArgumentException("La produccion no puede ser negativa");
+        }
+
         this.nombre = nombre;
         this.comuna = comuna;
         this.toneladas = toneladas;
@@ -18,7 +28,11 @@ public class CentroCultivo {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre != null && !nombre.isEmpty()) {
+            this.nombre = nombre;
+        } else {
+            System.out.println("El nombre no puede estar vacio, no se cambia");
+        }
     }
 
     public String getComuna() {
@@ -26,7 +40,11 @@ public class CentroCultivo {
     }
 
     public void setComuna(String comuna) {
-        this.comuna = comuna;
+        if(comuna != null && !comuna.isEmpty()) {
+            this.comuna = comuna;
+        } else {
+            System.out.println("La comuna no puede estar vacia, no se cambia");
+        }
     }
 
     public int getToneladas() {
@@ -34,6 +52,10 @@ public class CentroCultivo {
     }
 
     public void setToneladas(int toneladas) {
+        if(toneladas < 0) {
+            System.out.println("La produccion no puede ser negativa, no se cambia");
+            return;
+        }
         this.toneladas = toneladas;
     }
 
