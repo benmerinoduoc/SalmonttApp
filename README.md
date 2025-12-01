@@ -1,6 +1,6 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
 
-# 🧠 Evaluación Sumativa II – Desarrollo Orientado a Objetos I
+# 🧠 Evaluación Formativa IV – Desarrollo Orientado a Objetos I
 
 ## 👤 Autor del proyecto
 - Nombre completo: Benjamin Alejandro Merino Pinto
@@ -11,26 +11,35 @@
 ---
 
 ## 📘 Descripción general del sistema
-Este proyecto corresponde a la Evaluación Sumativa II de la asignatura Desarrollo Orientado a Objetos I. Se trata de un sistema desarrollado en Java cuyo objetivo es cargar información desde un archivo externo, convertir esos datos en objetos y administrarlos mediante una lista ArrayList.
+Este proyecto corresponde a la Evaluación Formativa IV de la asignatura Desarrollo Orientado a Objetos I. En esta versión se implementa una jerarquía de clases que permite modelar las unidades operativas de la empresa salmonera Salmontt, tales como centros de cultivo y plantas de proceso.
 
-El proyecto fue desarrollado a partir de un caso contextualizado de la empresa salmonera Salmontt, abordando una necesidad real: identificar y analizar los centros de cultivo según su producción. Para esto, se implementó una solución sencilla y organizada, que permite leer los datos, almacenarlos, mostrarlos y permitir al usuario filtrar los centros según la cantidad mínima de toneladas que ingrese.
+El objetivo principal fue organizar el sistema de forma jerárquica, reutilizable y escalable, permitiendo:
 
-Además, se incorporaron validaciones básicas para asegurar que los datos de cada centro de cultivo sean consistentes.
+Reutilizar atributos comunes mediante una superclase (UnidadOperativa).
+
+Especializar comportamientos y propiedades según el tipo de unidad (subclases CentroCultivo y PlantaProceso).
+
+Probar la creación de objetos de manera manual desde un gestor de prueba (GestorUnidades).
+
+Se implementaron constructores, herencia, sobrescritura de toString() y pruebas de los objetos mediante el método Main.
 
 ---
 
 ## 🧱 Estructura general del proyecto
 
 ```plaintext
-📁 src/
-├── app/
-│   └── Main.java               # Ejecuta el programa, muestra datos y aplica filtro dinamico de produccion
-├── data/
-│   └── GestorDatos.java        # Lee el archivo y arma la lista de centros de cultivo
-├── model/
-│   └── CentroCultivo.java      # Clase que representa un centro (nombre, comuna, produccion) con validaciones
 📁 resources/
-└── centros.txt                 # Archivo de texto con los datos separados por (;)
+└── centros.txt                 # Archivo de referencia (No se uso en esta actividad)
+
+📁 src/
+├── data/
+│   └── GestorUnidades.java     # Crea objetos de prueba de cada subclase
+├── model/
+│   ├── CentroCultivo.java      # Subclase con atributo toneladasProduccion
+│   ├── PlantaProceso.java      # Subclase con atributo capacidadProceso
+│   └── UnidadOperativa.java    # Superclase con atributos nombre y comuna
+└── ui/
+    └── Main.java               # Ejecuta el programa y muestra los objetos creados
 ```
 ---
 
@@ -44,16 +53,14 @@ git clone https://github.com/benmerinoduoc/SalmonttApp.git
 
 2. Abre el proyecto en IntelliJ IDEA.
 
-3. Ejecuta la clase `Main` desde el paquete `app`.
+3. Ejecuta la clase `Main` desde el paquete `ui`.
 
-4. En la consola podrás ver la lista completa de los centros de cultivo cargados desde el archivo `centros.txt` y cuáles cumplen con el filtro dinámico de produccion ingresado por el usuario.
-
-
+4. En la consola podrás ver la lista de todas las unidades operativas creadas desde `GestorUnidades`, incluyendo los centros de cultivo con su producción en toneladas y las plantas de proceso con su respectivo rendimiento, mostrando todos los datos relevantes de cada unidad.
 ---
 
 **Repositorio GitHub:** https://github.com/benmerinoduoc/SalmonttApp
-**Fecha de entrega:** 24/11/2025
+**Fecha de entrega:** 01/12/2025
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Sumativa II
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Formativa IV
