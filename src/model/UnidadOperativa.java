@@ -1,8 +1,9 @@
 package model;
 
-public class UnidadOperativa {
-    private String nombre;
-    private String comuna;
+public abstract class UnidadOperativa {
+
+    protected String nombre;
+    protected String comuna;
 
     public UnidadOperativa(String nombre, String comuna) {
         this.nombre = nombre;
@@ -17,8 +18,6 @@ public class UnidadOperativa {
         return comuna;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + ", Comuna: " + comuna;
-    }
+    //Metodo polimorfico
+    public abstract void mostrarInformacion();
 }

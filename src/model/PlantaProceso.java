@@ -2,17 +2,17 @@ package model;
 
 public class PlantaProceso extends UnidadOperativa {
 
-    private int capacidadProceso;
+    private int capacidadDiaria;
 
-    public PlantaProceso(String nombre, String comuna, int capacidadProceso) {
+    public PlantaProceso(String nombre, String comuna, int capacidadDiaria) {
         super(nombre, comuna);
-        this.capacidadProceso = capacidadProceso;
+        this.capacidadDiaria = capacidadDiaria;
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                ", Capacidad de proceso: " + capacidadProceso + " kg/h";
+    public void mostrarInformacion() {
+        System.out.println("Planta de Proceso: " + getNombre()
+                + " | Comuna: " + getComuna()
+                + " | Capacidad diaria: " + capacidadDiaria + " t/dia");
     }
 }
-

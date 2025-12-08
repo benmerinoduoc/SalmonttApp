@@ -4,16 +4,22 @@ import model.CentroCultivo;
 import model.PlantaProceso;
 import model.UnidadOperativa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GestorUnidades {
 
-    public UnidadOperativa[] crearUnidades() {
+    public List<UnidadOperativa> cargarUnidades() {
 
-        CentroCultivo c1 = new CentroCultivo("IslaHuar", "Calbuco", 1200);
-        CentroCultivo c2 = new CentroCultivo("ChaitenSur", "Chaitén", 800);
+        List<UnidadOperativa> unidades = new ArrayList<>();
 
-        PlantaProceso p1 = new PlantaProceso("Planta A", "Puerto Montt", 5000);
-        PlantaProceso p2 = new PlantaProceso("Planta B", "Castro", 3500);
+        unidades.add(new CentroCultivo("Centro A", "Puerto Montt", 1200));
+        unidades.add(new CentroCultivo("Centro B", "Quellon", 900));
+        unidades.add(new CentroCultivo("Centro C", "Chonchi", 1500));
 
-        return new UnidadOperativa[]{c1, c2, p1, p2};
+        unidades.add(new PlantaProceso("Planta Sur", "Puerto Montt", 300));
+        unidades.add(new PlantaProceso("Planta Norte", "Ancud", 450));
+
+        return unidades;
     }
 }
