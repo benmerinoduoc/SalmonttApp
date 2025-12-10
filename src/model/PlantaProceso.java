@@ -9,10 +9,12 @@ public class PlantaProceso extends UnidadOperativa {
         this.capacidadDiaria = capacidadDiaria;
     }
 
+    public int getCapacidadDiaria() {
+        return capacidadDiaria;
+    }
+
     @Override
-    public void mostrarInformacion() {
-        System.out.println("Planta de Proceso: " + getNombre()
-                + " | Comuna: " + getComuna()
-                + " | Capacidad diaria: " + capacidadDiaria + " t/dia");
+    public void mostrarResumen() {
+        System.out.println("Planta de Proceso: " + nombre + " | Comuna: " + comuna + " | Capacidad diaria: " + capacidadDiaria + " t/dia");
     }
 }

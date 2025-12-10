@@ -9,8 +9,12 @@ public class CentroCultivo extends UnidadOperativa {
         this.toneladasProduccion = toneladasProduccion;
     }
 
+    public int getToneladasProduccion() {
+        return toneladasProduccion;
+    }
+
     @Override
-    public void mostrarInformacion() {
+    public void mostrarResumen() {
         System.out.println("Centro de Cultivo: " + nombre + " | Comuna: " + comuna + " | Produccion: " + toneladasProduccion + " toneladas");
     }
 }

@@ -1,6 +1,6 @@
 package model;
 
-public abstract class UnidadOperativa {
+public abstract class UnidadOperativa implements Registrable {
 
     protected String nombre;
     protected String comuna;
@@ -17,7 +17,4 @@ public abstract class UnidadOperativa {
     public String getComuna() {
         return comuna;
     }
-
-    //Metodo polimorfico
-    public abstract void mostrarInformacion();
 }
