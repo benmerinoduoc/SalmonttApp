@@ -1,6 +1,6 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
 
-# Evaluación Formativa V – Desarrollo Orientado a Objetos I
+# Evaluación Sumativa III – Desarrollo Orientado a Objetos I
 
 ## Autor del proyecto
 - Nombre completo: Benjamin Alejandro Merino Pinto
@@ -12,35 +12,42 @@
 
 ## Descripción general del sistema
 
-Este proyecto corresponde a la Evaluación Formativa V de la asignatura Desarrollo Orientado a Objetos I. En esta actividad se implementa una jerarquía de clases que modela las unidades operativas de la empresa salmonera **Salmontt**, incorporando:
+Este proyecto corresponde a la Evaluación Sumativa III de la asignatura Desarrollo Orientado a Objetos I. En esta actividad se amplió la jerarquía de clases para la empresa salmonera **Salmontt**, incorporando:
 
 - **UnidadOperativa** como superclase base.
-- **CentroCultivo** como subclase con producción anual en toneladas.
-- **PlantaProceso** como subclase con capacidad de procesamiento por día.
+- **CentroCultivo** como subclase con producción diaria en toneladas.
+- **PlantaProceso** como subclase con capacidad diaria de procesamiento.
+- **Proveedor** y **Empleado** como nuevas entidades que implementan la interfaz `Registrable`.
+- Una interfaz común **Registrable** que define el método `mostrarResumen()`.
+- Un **GestorEntidades** que maneja una colección polimórfica de todas las entidades.
+- Una **interfaz gráfica básica** usando `JOptionPane` para agregar y visualizar entidades.
 
-El objetivo fue aplicar herencia, constructores, polimorfismo, sobrescritura de métodos y organización del código en paquetes.
-
-El sistema incluye un gestor (`GestorUnidades`) que crea objetos de prueba y un Main que muestra la información de todas las unidades operativas.
+El objetivo fue aplicar herencia, polimorfismo, interfaces, colecciones genéricas y diferenciación por tipo mediante `instanceof`.
 
 ---
 
 ## Estructura del proyecto
 
+
+
 ```
 📁 resources/
-└── centros.txt                 # Archivo de referencia (no utilizado en esta actividad)
+└── centros.txt                 # Archivo de referencia (No utilizado directamente en esta actividad)
 
 📁 src/
 ├── data/
-│   └── GestorUnidades.java     # Genera objetos de tipo CentroCultivo y PlantaProceso
+│   └── GestorEntidades.java    # Genera objetos de tipo CentroCultivo, PlantaProceso, Proveedor y Empleado
 ├── model/
 │   ├── CentroCultivo.java      # Subclase con atributo toneladasProduccion
-│   ├── PlantaProceso.java      # Subclase con atributo capacidadProceso
+│   ├── Empleado.java           # Subclase con atributo cargo
+│   ├── PlantaProceso.java      # Subclase con atributo capacidadDiaria
+│   ├── Proveedor.java          # Subclase con atributo rubro
+│   ├── Registrable.java        # Interfaz con método mostrarResumen()
 │   └── UnidadOperativa.java    # Superclase con nombre y comuna
 └── ui/
-    └── Main.java               # Ejecuta el sistema y muestra todas las unidades
-```
+    └── Main.java               # Interfaz gráfica y consola para recorrer, mostrar y agregar entidades
 
+```
 ---
 
 ## Cómo ejecutar el proyecto
@@ -55,16 +62,17 @@ git clone https://github.com/benmerinoduoc/SalmonttApp.git
 
 3. Ejecutar la clase `Main` dentro del paquete `ui`.
 
-4. La consola mostrará:
-   - Centros de cultivo con su producción anual (toneladas).
-   - Plantas de proceso con su capacidad diaria (t/día).
-   - Datos definidos en la superclase UnidadOperativa.
+4. La GUI permitirá:
+   - Ingresar nuevos empleados y proveedores.
+   - Recorrer y mostrar todas las entidades existentes en consola.
+   - Ver un resumen de cada entidad mediante la interfaz `Registrable`.
+   - Salir del sistema seleccionando la opción correspondiente.
 
 ---
 
 **Repositorio GitHub:** https://github.com/benmerinoduoc/SalmonttApp
-**Fecha de entrega:** 08/12/2025
+**Fecha de entrega:** 15/12/2025
 
 ---
 
-© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Formativa V
+© Duoc UC | Escuela de Informática y Telecomunicaciones | Evaluación Sumativa III
