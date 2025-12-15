@@ -15,11 +15,11 @@
 Este proyecto corresponde a la Evaluación Sumativa III de la asignatura Desarrollo Orientado a Objetos I. En esta actividad se amplió la jerarquía de clases para la empresa salmonera **Salmontt**, incorporando:
 
 - **UnidadOperativa** como superclase base.
-- **CentroCultivo** como subclase con producción diaria en toneladas.
+- **CentroCultivo** como subclase con producción en toneladas.
 - **PlantaProceso** como subclase con capacidad diaria de procesamiento.
 - **Proveedor** y **Empleado** como nuevas entidades que implementan la interfaz `Registrable`.
 - Una interfaz común **Registrable** que define el método `mostrarResumen()`.
-- Un **GestorEntidades** que maneja una colección polimórfica de todas las entidades.
+- Un **GestorEntidades** que maneja una colección polimórfica de todas las entidades y diferencia entidades usando instanceof.
 - Una **interfaz gráfica básica** usando `JOptionPane` para agregar y visualizar entidades.
 
 El objetivo fue aplicar herencia, polimorfismo, interfaces, colecciones genéricas y diferenciación por tipo mediante `instanceof`.
@@ -36,7 +36,7 @@ El objetivo fue aplicar herencia, polimorfismo, interfaces, colecciones genéric
 
 📁 src/
 ├── data/
-│   └── GestorEntidades.java    # Genera objetos de tipo CentroCultivo, PlantaProceso, Proveedor y Empleado
+│   └── GestorEntidades.java    # Maneja una colección polimórfica y diferencia entidades con instanceof
 ├── model/
 │   ├── CentroCultivo.java      # Subclase con atributo toneladasProduccion
 │   ├── Empleado.java           # Subclase con atributo cargo
