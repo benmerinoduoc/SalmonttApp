@@ -24,6 +24,21 @@ public class GestorEntidades {
     public void recorrerYClasificar(List<Registrable> lista) {
         for (Registrable r : lista) {
             r.mostrarResumen();
+
+            if (r instanceof CentroCultivo) {
+                CentroCultivo c = (CentroCultivo) r;
+                c.getToneladasProduccion();
+            } else if (r instanceof PlantaProceso) {
+                PlantaProceso p = (PlantaProceso) r;
+                p.getCapacidadDiaria();
+            } else if (r instanceof Proveedor) {
+                Proveedor p = (Proveedor) r;
+                p.getRubro();
+            } else if (r instanceof Empleado) {
+                Empleado e = (Empleado) r;
+                e.getCargo();
+            }
+
             System.out.println();
         }
     }
